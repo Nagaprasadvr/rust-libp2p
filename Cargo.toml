@@ -132,14 +132,14 @@ web-time = "1.1.0"
 ring = "0.17.8"
 rcgen = "0.11.3"
 
-[patch.crates-io]
+# [patch.crates-io]
 
-# Patch away `libp2p-identity` in our dependency tree with the workspace version.
-# `libp2p-identity` is a leaf dependency and used within `rust-multiaddr` which is **not** part of the workspace.
-# As a result, we cannot just reference the workspace version in our crates because the types would mismatch with what
-# we import via `rust-multiaddr`.
-# This is expected to stay here until we move `libp2p-identity` to a separate repository which makes the dependency relationship more obvious.
-libp2p-identity = { path = "identity" }
+# # Patch away `libp2p-identity` in our dependency tree with the workspace version.
+# # `libp2p-identity` is a leaf dependency and used within `rust-multiaddr` which is **not** part of the workspace.
+# # As a result, we cannot just reference the workspace version in our crates because the types would mismatch with what
+# # we import via `rust-multiaddr`.
+# # This is expected to stay here until we move `libp2p-identity` to a separate repository which makes the dependency relationship more obvious.
+# libp2p-identity = { path = "identity" }
 
 [workspace.lints]
 rust.unreachable_pub = "warn"
